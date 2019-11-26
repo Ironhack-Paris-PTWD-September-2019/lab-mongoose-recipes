@@ -22,4 +22,6 @@ Recipe.create({
   image: 'https://assets.afcdn.com/recipe/20160920/36744_w420h344c1cx2487cy1876.jpg',
   duration: 35,
   creator: 'marj83'
-});
+})
+  .then((recipe) => console.log('Recipe: ', recipe.title))
+  .catch((e) => console.error('Error: ', e))
