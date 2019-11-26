@@ -10,3 +10,28 @@ mongoose.connect('mongodb://localhost/recipeApp', { useNewUrlParser: true })
     console.error('Error connecting to mongo', err);
   });
 
+ // Create the model
+/*Recipe
+  .create({title: "aaaaa", level: "Easy Peasy",cuisine: "bbbbb", dishtype: "ccccc"})
+  .then(recipe=>console.log(recipe.title))
+  .catch(err=>console.error("Recipe not included"));*/
+
+// Insert many
+/*Recipe
+  .insertMany(data)
+  .then(function(){
+    data.forEach(el=>console.log(el.title));
+  })
+  .catch(err=> console.error("Recipe not included"))*/
+
+// Update recipe
+/*Recipe
+  .updateOne({title:"Rigatoni alla Genovese"},{duration:100})
+  .then(console.log("Bravo Margot"))
+  .catch(err=>console.error("Recipe not updated"));*/
+
+// Remove recipe
+/*Recipe
+  .deleteOne({title:"Carrot Cake"})
+  .then(console.log("Rebravo Margot"))
+  .catch(err=>console.error("pas update"));*/
