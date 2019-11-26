@@ -25,3 +25,20 @@ Recipe.create({
 })
   .then((recipe) => console.log('Recipe: ', recipe.title))
   .catch((e) => console.error('Error: ', e))
+
+// Insert many recipes
+Recipe.insertMany(data)
+  .then((recipes) => recipes.map((el) => console.log('Recipe: ', el.title)))
+  .catch((e) => console.error('Error: ', e))
+
+// Update: arg1: query, arg2: update
+Recipe.update({ title: 'Rigatoni alla Genovese' }, { duration: 100 })
+  .then(console.log('Duration updated to 100'))
+  .catch(e => console.error('Error: ', e))
+
+// Delete
+Recipe.deleteOne({ title: 'Carrot Cake' })
+  .then(() => console.log('Recipe deleted'))
+  .catch((e) => console.error('Error: ', e))
+
+// Close the connection
