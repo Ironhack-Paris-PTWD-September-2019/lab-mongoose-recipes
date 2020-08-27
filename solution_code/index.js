@@ -41,16 +41,17 @@ Recipe.insertMany(data).then(recipes => {
 // Iteration 4
 //
 
-Recipe.findOne({title: 'Rigatoni alla Genovese'}).then(function (recipe) {
-  if (!recipe) return; // not found
+Recipe.findOne({title: 'Rigatoni alla Genovese'})
+  .then(function (recipe) {
+    if (!recipe) return; // not found
 
-  recipe.duration = 100;
+    recipe.duration = 100;
 
-  recipe.save().then(function () {
-    console.log('🍝 updated!')
-  }).catch(err => console.error(err));
-
-}).catch(err => console.error(err));
+    return recipe.save() // chain
+  })
+  .then(recipe => console.log('🍝 updated!'))
+  .catch(err => console.error(err))
+;
 
 //
 // Iteration 5
