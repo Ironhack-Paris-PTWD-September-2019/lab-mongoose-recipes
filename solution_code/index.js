@@ -43,7 +43,7 @@ Recipe.insertMany(data).then(recipes => {
 
 Recipe.findOne({title: 'Rigatoni alla Genovese'})
   .then(function (recipe) {
-    if (!recipe) return; // not found
+    if (!recipe) throw new Error('recipe not found'); // not found
 
     recipe.duration = 100;
 
